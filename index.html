@@ -17,23 +17,43 @@ body {
   user-select: none;
 }
 
-/* ===== HERO – MINIMÁLNÍ OŘEZ ===== */
+/* ===== HERO ===== */
 .hero {
   width: 100%;
-  height: 520px;                 /* KLÍČ – vysoké hero */
+  height: 420px; /* VÍC MÍSTA DOLE */
+
   background-image: url("images/uvodnifotka.png");
-  background-size: cover;        /* do krajů */
-  background-position: center 20%; /* víc nahoře = víc obsahu */
+  background-size: cover;
+  background-position: center 12%; /* LEHKÝ OŘEZ NAHOŘE */
   background-repeat: no-repeat;
+
   position: relative;
+
+  display: flex;
+  align-items: flex-end; /* text dole */
+  justify-content: center;
 }
 
-/* skoro žádné tmavení */
+/* jemný overlay */
 .hero::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.06);
+  background: rgba(0, 0, 0, 0.18);
+}
+
+/* text v hero */
+.hero h1 {
+  position: relative;
+  z-index: 1;
+
+  color: #fff;
+  font-size: 2.4em;
+  margin: 0 0 35px 0;
+  padding: 12px 24px;
+
+  background: rgba(0,0,0,0.35); /* čitelnost */
+  letter-spacing: 1px;
 }
 
 /* ===== OBSAH ===== */
@@ -86,8 +106,13 @@ h2 {
 
 @media (max-width: 900px) {
   .hero {
-    height: 320px;               /* menší, ale pořád čitelné */
+    height: 300px;
     background-position: center;
+  }
+
+  .hero h1 {
+    font-size: 1.6em;
+    margin-bottom: 20px;
   }
 
   .two-cols {
@@ -123,11 +148,12 @@ footer {
 
 <body>
 
-<div class="hero"></div>
+<!-- HERO S FOTKOU A NADPISEM -->
+<div class="hero">
+  <h1>Výkup vojenského, hasičského a policejního materiálu</h1>
+</div>
 
 <div class="container">
-
-  <h1>Výkup vojenského, hasičského a policejního materiálu</h1>
 
   <p class="intro">
     Dlouhodobě se zabýváme výkupem vojenských, hasičských a policejních sběratelských předmětů všech období.
@@ -135,7 +161,7 @@ footer {
   </p>
 
   <div class="two-cols">
-
+    <!-- LEVÁ -->
     <div>
       <div class="section">
         <h2>Co vykupujeme</h2>
@@ -158,17 +184,17 @@ footer {
       </div>
     </div>
 
+    <!-- PRAVÁ -->
     <div>
       <div class="section">
         <h2>Jak nabídku zaslat</h2>
         <ul>
-          <li>popis</li>
+          <li>stručný popis</li>
           <li>fotografie</li>
-          <li>cenová představa</li>
+          <li>cenovou představu</li>
         </ul>
       </div>
     </div>
-
   </div>
 
   <div class="contact">
