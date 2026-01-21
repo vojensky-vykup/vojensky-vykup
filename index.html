@@ -1,122 +1,217 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <title>Výkup vojenského materiálu | Vojenský výkup</title>
-  <meta name="description" content="Dlouhodobý a seriózní výkup vojenského, hasičského a policejního sběratelského materiálu. Jednáme diskrétně a férově.">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Výkup vojenského, hasičského a policejního materiálu</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f2f1ec;
-      color: #222;
-      line-height: 1.6;
-    }
-    header {
-      background: #2b2b2b;
-      color: #fff;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2.2em;
-    }
-    header p {
-      max-width: 900px;
-      margin: 15px auto 0;
-      color: #ddd;
-      font-size: 1.05em;
-    }
-    section {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-    h2 {
-      border-bottom: 2px solid #bbb;
-      padding-bottom: 6px;
-      margin-top: 40px;
-    }
-    ul {
-      padding-left: 20px;
-    }
-    .note {
-      background: #e6e3db;
-      padding: 15px;
-      border-left: 4px solid #666;
-      margin: 25px 0;
-    }
-    .contact {
-      background: #2b2b2b;
-      color: #fff;
-      padding: 30px 20px;
-      text-align: center;
-      margin-top: 60px;
-    }
-    .contact a {
-      color: #fff;
-      font-weight: bold;
-      text-decoration: none;
-      font-size: 1.1em;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.9em;
-      color: #666;
-      margin: 30px 0;
-    }
-  </style>
+<style>
+/* ===== ZÁKLAD ===== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #222;
+  line-height: 1.6;
+  user-select: none;
+}
+
+/* ===== HERO ===== */
+.hero {
+  width: 100%;
+  height: 260px;
+  background: #999;
+}
+
+/* ===== OBSAH ===== */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
+.intro {
+  max-width: 850px;
+  margin-bottom: 40px;
+}
+
+/* ===== SEKCE ===== */
+.section {
+  margin-bottom: 50px;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
+
+/* ===== GRID OBRÁZKŮ ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.img-box {
+  width: 100%;
+  height: 180px;
+  background: #ccc;
+}
+
+/* ===== ROZLOŽENÍ DO DVOU SLOUPCŮ ===== */
+.two-cols {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .two-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== INFO ===== */
+.info {
+  background: #f1f1f1;
+  padding: 15px;
+  margin: 25px 0;
+}
+
+/* ===== KONTAKT ===== */
+.contact {
+  background: #2b2b2b;
+  color: #fff;
+  padding: 30px;
+  margin-top: 50px;
+}
+
+.contact strong {
+  font-size: 1.2em;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  font-size: 0.85em;
+  color: #777;
+  margin: 30px 0;
+}
+</style>
 </head>
 
 <body>
 
-<header>
+<div class="hero"></div>
+
+<div class="container">
+
   <h1>Výkup vojenského, hasičského a policejního materiálu</h1>
-  <p>
+
+  <p class="intro">
     Dlouhodobě se zabýváme výkupem vojenských, hasičských a policejních sběratelských předmětů všech období.
-    Jednáme <strong>seriózně, diskrétně a férově</strong>. Máme zájem o jednotlivé kusy, celé sbírky i větší množství materiálu.
-  </p>
-</header>
-
-<section>
-  <h2>Co vykupujeme</h2>
-  <ul>
-    <li>helmy, čepice, uniformy a výstroj</li>
-    <li>chladné zbraně (nože, bodáky, bajonety, šavle, kordíky)</li>
-    <li>plynové masky, celty, polní výstroj</li>
-    <li>odznaky, medaile, přezky</li>
-    <li>pouzdra, zásobníky, bedny</li>
-    <li>vojenské knihy, předpisy, dokumenty</li>
-    <li>fotografie, alba a další dobové materiály</li>
-  </ul>
-
-  <p>
-    Vykupujeme předměty z období světových válek, z dob socialismu i současný materiál.
+    Jednáme seriózně, diskrétně a férově. Máme zájem o jednotlivé kusy, celé sbírky i větší množství materiálu.
   </p>
 
-  <h2>Stav předmětu nerozhoduje</h2>
-  <p>
-    Zájem máme i o poškozené, nekompletní nebo používané kusy, stejně jako o znečištěné či jinak opotřebené předměty.
-    Nic pro nás není drobností — i zdánlivě bezvýznamný předmět může mít sběratelskou hodnotu.
-  </p>
+  <div class="two-cols">
 
-  <div class="note">
-    Pro rychlé vyřízení nabídky prosíme o zaslání fotografií, stručného popisu a cenové představy.
-    <strong>Není nutné znát přesnou hodnotu.</strong>
+    <!-- LEVÁ ČÁST -->
+    <div>
+
+      <div class="section">
+        <h2>Co vykupujeme</h2>
+
+        <div class="grid">
+          <div class="img-box"></div>
+          <div class="img-box"></div>
+          <div class="img-box"></div>
+          <div class="img-box"></div>
+        </div>
+
+        <ul>
+          <li>helmy, uniformy, čepice</li>
+          <li>chladné zbraně (nože, bodáky, bajonety)</li>
+          <li>plynové masky, celty, výstroj</li>
+          <li>odznaky, medaile, přezky</li>
+          <li>bedny, pouzdra, zásobníky</li>
+          <li>fotografie, alba, dokumenty</li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h2>Stav předmětu nerozhoduje</h2>
+
+        <div class="img-box"></div>
+
+        <p>
+          Zájem máme i o poškozené, nekompletní nebo používané předměty.
+          Nic pro nás není drobností – i zdánlivě bezvýznamný kus může mít sběratelskou hodnotu.
+        </p>
+      </div>
+
+    </div>
+
+    <!-- PRAVÁ ČÁST -->
+    <div>
+
+      <div class="section">
+        <h2>Jak nabídku zaslat</h2>
+
+        <ul>
+          <li>stručný popis předmětu</li>
+          <li>fotografie</li>
+          <li>cenovou představu</li>
+        </ul>
+
+        <p>
+          Nabídky bez těchto informací nejsou vyřizovány.
+        </p>
+      </div>
+
+    </div>
+
   </div>
-</section>
 
-<div class="contact">
-  <p>Nabídky zasílejte na e-mail:</p>
-  <p><a href="mailto:vojensky-vykup@email.cz">vojensky-vykup@email.cz</a></p>
+  <div class="contact">
+    <p>Nabídky zasílejte na e-mail:</p>
+    <strong>vojensky-vykup@email.cz</strong>
+  </div>
+
 </div>
 
 <footer>
   © Vojenský výkup
 </footer>
+
+<!-- ===== OCHRANA PROTI KOPÍROVÁNÍ ===== -->
+<script>
+// Pravé tlačítko
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+// Klávesové zkratky
+document.addEventListener('keydown', function(e) {
+  if (
+    (e.ctrlKey && ['c','v','s','p','u','a'].includes(e.key.toLowerCase())) ||
+    e.key === 'PrintScreen'
+  ) {
+    e.preventDefault();
+    alert('Kopírování obsahu je zakázáno.');
+  }
+});
+
+// Pokus o PrintScreen (překrytí)
+setInterval(() => {
+  if (window.outerWidth - window.innerWidth > 200) {
+    document.body.innerHTML = '';
+  }
+}, 1000);
+</script>
 
 </body>
 </html>
