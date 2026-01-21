@@ -2,7 +2,7 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>vojensky-vykup.cz</title>
+<title>Výkup vojenského, hasičského a policejního materiálu</title>
 <meta name="description" content="Seriózní výkup vojenského, hasičského a policejního sběratelského materiálu.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -20,17 +20,18 @@ body {
 /* ===== HERO ===== */
 .hero {
   width: 100%;
-  height: 420px; /* VÍC MÍSTA DOLE */
+  min-height: 420px;
+  height: 45vh;
 
   background-image: url("images/uvodnifotka.png");
   background-size: cover;
-  background-position: center 8%; /* LEHKÝ OŘEZ NAHOŘE */
+  background-position: center 8%;
   background-repeat: no-repeat;
 
   position: relative;
 
   display: flex;
-  align-items: flex-end; /* text dole */
+  align-items: flex-end;
   justify-content: center;
 }
 
@@ -43,17 +44,18 @@ body {
 }
 
 /* text v hero */
-.hero h1 {
+.hero .hero-text {
   position: relative;
   z-index: 1;
 
+  margin-bottom: 35px;
+  padding: 12px 26px;
+
   color: #fff;
   font-size: 2.4em;
-  margin: 0 0 35px 0;
-  padding: 12px 24px;
+  letter-spacing: 2px;
 
-  background: rgba(0,0,0,0.35); /* čitelnost */
-  letter-spacing: 1px;
+  background: rgba(0, 0, 0, 0.4);
 }
 
 /* ===== OBSAH ===== */
@@ -106,11 +108,12 @@ h2 {
 
 @media (max-width: 900px) {
   .hero {
-    height: 300px;
+    min-height: 300px;
+    height: 40vh;
     background-position: center;
   }
 
-  .hero h1 {
+  .hero .hero-text {
     font-size: 1.6em;
     margin-bottom: 20px;
   }
@@ -118,6 +121,13 @@ h2 {
   .two-cols {
     grid-template-columns: 1fr;
   }
+}
+
+/* ===== INFO ===== */
+.info {
+  background: #f1f1f1;
+  padding: 15px;
+  margin: 25px 0;
 }
 
 /* ===== KONTAKT ===== */
@@ -148,12 +158,14 @@ footer {
 
 <body>
 
-<!-- HERO S FOTKOU A NADPISEM -->
+<!-- HERO S FOTKOU A TEXTEM -->
 <div class="hero">
-  <h1>Výkup vojenského, hasičského a policejního materiálu</h1>
+  <div class="hero-text">vojensky-vykup.cz</div>
 </div>
 
 <div class="container">
+
+  <h1>Výkup vojenského, hasičského a policejního materiálu</h1>
 
   <p class="intro">
     Dlouhodobě se zabýváme výkupem vojenských, hasičských a policejních sběratelských předmětů všech období.
@@ -161,7 +173,8 @@ footer {
   </p>
 
   <div class="two-cols">
-    <!-- LEVÁ -->
+
+    <!-- LEVÁ ČÁST -->
     <div>
       <div class="section">
         <h2>Co vykupujeme</h2>
@@ -175,31 +188,42 @@ footer {
 
         <ul>
           <li>helmy, uniformy, čepice</li>
-          <li>chladné zbraně</li>
-          <li>plynové masky, výstroj</li>
-          <li>odznaky, medaile</li>
-          <li>bedny, pouzdra</li>
-          <li>dokumenty, fotografie</li>
+          <li>chladné zbraně (nože, bodáky, bajonety)</li>
+          <li>plynové masky, celty, výstroj</li>
+          <li>odznaky, medaile, přezky</li>
+          <li>bedny, pouzdra, zásobníky</li>
+          <li>fotografie, alba, dokumenty</li>
         </ul>
+      </div>
+
+      <div class="section">
+        <h2>Stav předmětu nerozhoduje</h2>
+        <div class="img-box"></div>
+        <p>
+          Zájem máme i o poškozené, nekompletní nebo používané předměty.
+          Nic pro nás není drobností – i zdánlivě bezvýznamný kus může mít sběratelskou hodnotu.
+        </p>
       </div>
     </div>
 
-    <!-- PRAVÁ -->
+    <!-- PRAVÁ ČÁST -->
     <div>
       <div class="section">
         <h2>Jak nabídku zaslat</h2>
         <ul>
-          <li>stručný popis</li>
+          <li>stručný popis předmětu</li>
           <li>fotografie</li>
           <li>cenovou představu</li>
         </ul>
+        <p>Nabídky bez těchto informací nejsou vyřizovány.</p>
       </div>
     </div>
+
   </div>
 
   <div class="contact">
     <p>Nabídky zasílejte na e-mail:</p>
-    <a href="mailto:vojensky-vykup@email.cz">
+    <a href="mailto:vojensky-vykup@email.cz?subject=Nabídka%20k%20výkupu">
       vojensky-vykup@email.cz
     </a>
   </div>
@@ -209,6 +233,27 @@ footer {
 <footer>
   © Vojenský výkup
 </footer>
+
+<!-- ===== OCHRANA PROTI KOPÍROVÁNÍ ===== -->
+<script>
+document.addEventListener('contextmenu', e => e.preventDefault());
+
+document.addEventListener('keydown', function(e) {
+  if (
+    (e.ctrlKey && ['c','v','s','p','u','a'].includes(e.key.toLowerCase())) ||
+    e.key === 'PrintScreen'
+  ) {
+    e.preventDefault();
+    alert('Kopírování obsahu je zakázáno.');
+  }
+});
+
+setInterval(() => {
+  if (window.outerWidth - window.innerWidth > 200) {
+    document.body.innerHTML = '';
+  }
+}, 1000);
+</script>
 
 </body>
 </html>
