@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Výkup vojenského, hasičského a policejního materiálu</title>
-<meta name="description" content="Seriózní výkup vojenského, hasičského a policejního sběratelského materiálu.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -20,42 +19,8 @@ body {
 /* ===== HERO ===== */
 .hero {
   width: 100%;
-  min-height: 420px;
-  height: 45vh;
-
-  background-image: url("images/uvodnifotka.png");
-  background-size: cover;
-  background-position: center 8%;
-  background-repeat: no-repeat;
-
-  position: relative;
-
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-}
-
-/* jemný overlay */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.18);
-}
-
-/* text v hero */
-.hero .hero-text {
-  position: relative;
-  z-index: 1;
-
-  margin-bottom: 35px;
-  padding: 12px 26px;
-
-  color: #fff;
-  font-size: 2.4em;
-  letter-spacing: 2px;
-
-  background: rgba(0, 0, 0, 0.4);
+  height: 260px;
+  background: #999;
 }
 
 /* ===== OBSAH ===== */
@@ -99,7 +64,7 @@ h2 {
   background: #ccc;
 }
 
-/* ===== ROZLOŽENÍ ===== */
+/* ===== ROZLOŽENÍ DO DVOU SLOUPCŮ ===== */
 .two-cols {
   display: grid;
   grid-template-columns: 2fr 1fr;
@@ -107,17 +72,6 @@ h2 {
 }
 
 @media (max-width: 900px) {
-  .hero {
-    min-height: 300px;
-    height: 40vh;
-    background-position: center;
-  }
-
-  .hero .hero-text {
-    font-size: 1.6em;
-    margin-bottom: 20px;
-  }
-
   .two-cols {
     grid-template-columns: 1fr;
   }
@@ -136,14 +90,10 @@ h2 {
   color: #fff;
   padding: 30px;
   margin-top: 50px;
-  text-align: center;
 }
 
-.contact a {
-  color: #fff;
+.contact strong {
   font-size: 1.2em;
-  text-decoration: none;
-  font-weight: bold;
 }
 
 /* ===== FOOTER ===== */
@@ -158,10 +108,7 @@ footer {
 
 <body>
 
-<!-- HERO S FOTKOU A TEXTEM -->
-<div class="hero">
-  <div class="hero-text">vojensky-vykup.cz</div>
-</div>
+<div class="hero"></div>
 
 <div class="container">
 
@@ -176,6 +123,7 @@ footer {
 
     <!-- LEVÁ ČÁST -->
     <div>
+
       <div class="section">
         <h2>Co vykupujeme</h2>
 
@@ -198,34 +146,41 @@ footer {
 
       <div class="section">
         <h2>Stav předmětu nerozhoduje</h2>
+
         <div class="img-box"></div>
+
         <p>
           Zájem máme i o poškozené, nekompletní nebo používané předměty.
           Nic pro nás není drobností – i zdánlivě bezvýznamný kus může mít sběratelskou hodnotu.
         </p>
       </div>
+
     </div>
 
     <!-- PRAVÁ ČÁST -->
     <div>
+
       <div class="section">
         <h2>Jak nabídku zaslat</h2>
+
         <ul>
           <li>stručný popis předmětu</li>
           <li>fotografie</li>
           <li>cenovou představu</li>
         </ul>
-        <p>Nabídky bez těchto informací nejsou vyřizovány.</p>
+
+        <p>
+          Nabídky bez těchto informací nejsou vyřizovány.
+        </p>
       </div>
+
     </div>
 
   </div>
 
   <div class="contact">
     <p>Nabídky zasílejte na e-mail:</p>
-    <a href="mailto:vojensky-vykup@email.cz?subject=Nabídka%20k%20výkupu">
-      vojensky-vykup@email.cz
-    </a>
+    <strong>vojensky-vykup@email.cz</strong>
   </div>
 
 </div>
@@ -236,8 +191,10 @@ footer {
 
 <!-- ===== OCHRANA PROTI KOPÍROVÁNÍ ===== -->
 <script>
+// Pravé tlačítko
 document.addEventListener('contextmenu', e => e.preventDefault());
 
+// Klávesové zkratky
 document.addEventListener('keydown', function(e) {
   if (
     (e.ctrlKey && ['c','v','s','p','u','a'].includes(e.key.toLowerCase())) ||
@@ -248,6 +205,7 @@ document.addEventListener('keydown', function(e) {
   }
 });
 
+// Pokus o PrintScreen (překrytí)
 setInterval(() => {
   if (window.outerWidth - window.innerWidth > 200) {
     document.body.innerHTML = '';
