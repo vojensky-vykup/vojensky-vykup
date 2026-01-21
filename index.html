@@ -1,117 +1,164 @@
 <!DOCTYPE html>
 <html lang="cs">
 <head>
-  <meta charset="UTF-8">
-  <title>Vojenský výkup</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Výkup vojenského, hasičského a policejního materiálu</title>
+<meta name="description" content="Seriózní výkup vojenského, hasičského a policejního sběratelského materiálu.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background-color: #f4f4f4;
-      color: #222;
-    }
+<style>
+/* ===== ZÁKLAD ===== */
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+  color: #222;
+  line-height: 1.6;
+  user-select: none;
+}
 
-    /* ===== HEADER ===== */
-    header.hero {
-      background-image: url("images/uvodnifotka.png");
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
+/* ===== HERO ===== */
+.hero {
+  width: 100%;
+  height: 320px; /* zvětšeno */
 
-      height: 420px;
-      position: relative;
+  background-image: url("images/uvodnifotka.png");
+  background-size: cover;
+  background-position: center top; /* víc fotky */
+  background-repeat: no-repeat;
 
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      color: white;
-    }
+  position: relative;
+}
 
-    /* tmavý překryv */
-    header.hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background-color: rgba(0, 0, 0, 0.5);
-    }
+/* světlejší overlay */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+}
 
-    .hero-content {
-      position: relative;
-      z-index: 1;
-      padding: 20px;
-    }
+/* ===== OBSAH ===== */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
 
-    .hero-content h1 {
-      font-size: 44px;
-      margin: 0;
-      letter-spacing: 2px;
-    }
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
 
-    .hero-content p {
-      font-size: 18px;
-      margin-top: 12px;
-    }
+.intro {
+  max-width: 850px;
+  margin-bottom: 40px;
+}
 
-    /* ===== OBSAH ===== */
-    main {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      background: white;
-    }
+/* ===== SEKCE ===== */
+.section {
+  margin-bottom: 50px;
+}
 
-    main h2 {
-      margin-top: 0;
-    }
+h2 {
+  font-size: 1.6em;
+  margin-bottom: 15px;
+}
 
-    footer {
-      text-align: center;
-      padding: 20px;
-      font-size: 14px;
-      color: #666;
-    }
-  </style>
+/* ===== GRID OBRÁZKŮ ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.img-box {
+  width: 100%;
+  height: 180px;
+  background: #ccc;
+}
+
+/* ===== ROZLOŽENÍ ===== */
+.two-cols {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+}
+
+@media (max-width: 900px) {
+  .two-cols {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===== INFO ===== */
+.info {
+  background: #f1f1f1;
+  padding: 15px;
+  margin: 25px 0;
+}
+
+/* ===== KONTAKT ===== */
+.contact {
+  background: #2b2b2b;
+  color: #fff;
+  padding: 30px;
+  margin-top: 50px;
+  text-align: center;
+}
+
+.contact a {
+  color: #fff;
+  font-size: 1.2em;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  text-align: center;
+  font-size: 0.85em;
+  color: #777;
+  margin: 30px 0;
+}
+</style>
 </head>
 
 <body>
 
-  <!-- HEADER -->
-  <header class="hero">
-    <div class="hero-content">
-      <h1>Vojenský výkup</h1>
-      <p>Výkup vojenských a sběratelských předmětů</p>
-    </div>
-  </header>
+<div class="hero"></div>
 
-  <!-- OBSAH -->
-  <main>
-    <h2>O nás</h2>
-    <p>
-      Nabízíme seriózní výkup vojenských sběratelských předmětů,
-      pozůstalostí a militárií z období 19. a 20. století.
-    </p>
+<div class="container">
 
-    <h2>Co vykupujeme</h2>
-    <ul>
-      <li>helmy a uniformy</li>
-      <li>vyznamenání a odznaky</li>
-      <li>militárie a dokumenty</li>
-      <li>celé sbírky a pozůstalosti</li>
-    </ul>
+  <h1>Výkup vojenského, hasičského a policejního materiálu</h1>
 
-    <h2>Kontakt</h2>
-    <p>
-      Máte zájem o výkup?  
-      Ozvěte se nám e-mailem nebo telefonicky.
-    </p>
-  </main>
+  <p class="intro">
+    Dlouhodobě se zabýváme výkupem vojenských, hasičských a policejních sběratelských předmětů všech období.
+    Jednáme seriózně, diskrétně a férově. Máme zájem o jednotlivé kusy, celé sbírky i větší množství materiálu.
+  </p>
 
-  <footer>
-    © 2026 Vojenský výkup
-  </footer>
+  <div class="two-cols">
 
-</body>
-</html>
+    <!-- LEVÁ ČÁST -->
+    <div>
+
+      <div class="section">
+        <h2>Co vykupujeme</h2>
+
+        <div class="grid">
+          <div class="img-box"></div>
+          <div class="img-box"></div>
+          <div class="img-box"></div>
+          <div class="img-box"></div>
+        </div>
+
+        <ul>
+          <li>helmy, uniformy, čepice</li>
+          <li>chladné zbraně (nože, bodáky, bajonety)</li>
+          <li>plynové masky, celty, výstroj</li>
+          <li>odznaky, medaile, přezky</li>
+          <li>bedny, pouzdra, zásobníky</li>
+          <li>fotografie, alba, dokumenty</li>
+        </ul>
+      </div>
