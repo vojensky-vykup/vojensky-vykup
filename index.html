@@ -16,11 +16,29 @@ body {
   user-select: none;
 }
 
-/* ===== HERO ===== */
+/* ===== HERO – OBRÁZEK CELÝ ===== */
 .hero {
+  position: relative;
   width: 100%;
-  height: 260px;
-  background: #999;
+}
+
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* text přes obrázek */
+.hero-text {
+  position: absolute;
+  bottom: 20px;
+  right: 30px;
+
+  font-family: "Georgia", "Times New Roman", serif;
+  font-size: 2.2em;
+  letter-spacing: 2px;
+  color: rgba(255,255,255,0.9);
+  text-shadow: 0 2px 6px rgba(0,0,0,0.6);
 }
 
 /* ===== OBSAH ===== */
@@ -58,10 +76,11 @@ h2 {
   margin-bottom: 25px;
 }
 
-.img-box {
+.grid img {
   width: 100%;
   height: 180px;
-  background: #ccc;
+  object-fit: cover;
+  display: block;
 }
 
 /* ===== ROZLOŽENÍ DO DVOU SLOUPCŮ ===== */
@@ -75,13 +94,11 @@ h2 {
   .two-cols {
     grid-template-columns: 1fr;
   }
-}
 
-/* ===== INFO ===== */
-.info {
-  background: #f1f1f1;
-  padding: 15px;
-  margin: 25px 0;
+  .hero-text {
+    font-size: 1.5em;
+    right: 15px;
+  }
 }
 
 /* ===== KONTAKT ===== */
@@ -89,11 +106,14 @@ h2 {
   background: #2b2b2b;
   color: #fff;
   padding: 30px;
-  margin-top: 50px;
+  margin-top: 30px;
 }
 
-.contact strong {
+.contact a {
+  color: #fff;
   font-size: 1.2em;
+  font-weight: bold;
+  text-decoration: none;
 }
 
 /* ===== FOOTER ===== */
@@ -108,7 +128,11 @@ footer {
 
 <body>
 
-<div class="hero"></div>
+<!-- HERO -->
+<div class="hero">
+  <img src="images/uvodnifotka2.png" alt="Vojenský výkup">
+  <div class="hero-text">www.vojensky-vykup.cz</div>
+</div>
 
 <div class="container">
 
@@ -128,31 +152,22 @@ footer {
         <h2>Co vykupujeme</h2>
 
         <div class="grid">
-          <div class="img-box"></div>
-          <div class="img-box"></div>
-          <div class="img-box"></div>
-          <div class="img-box"></div>
+          <img src="images/burinky.png" alt="">
+          <img src="images/rakousko.png" alt="">
+          <img src="images/uniformy.png" alt="">
+          <img src="images/dokumenty.png" alt="">
+          <img src="images/medailerakousko.png" alt="">
+          <img src="images/vzornaci.png" alt="">
+          <img src="images/cepice.png" alt="">
+          <img src="images/damskecepice.png" alt="">
         </div>
 
         <ul>
           <li>helmy, uniformy, čepice</li>
-          <li>chladné zbraně (nože, bodáky, bajonety)</li>
-          <li>plynové masky, celty, výstroj</li>
-          <li>odznaky, medaile, přezky</li>
-          <li>bedny, pouzdra, zásobníky</li>
-          <li>fotografie, alba, dokumenty</li>
+          <li>chladné zbraně</li>
+          <li>vyznamenání a medaile</li>
+          <li>dokumenty a fotografie</li>
         </ul>
-      </div>
-
-      <div class="section">
-        <h2>Stav předmětu nerozhoduje</h2>
-
-        <div class="img-box"></div>
-
-        <p>
-          Zájem máme i o poškozené, nekompletní nebo používané předměty.
-          Nic pro nás není drobností – i zdánlivě bezvýznamný kus může mít sběratelskou hodnotu.
-        </p>
       </div>
 
     </div>
@@ -160,41 +175,38 @@ footer {
     <!-- PRAVÁ ČÁST -->
     <div>
 
-      <div class="section">
+      <div class="section" style="margin-top:120px;">
         <h2>Jak nabídku zaslat</h2>
-
         <ul>
           <li>stručný popis předmětu</li>
           <li>fotografie</li>
           <li>cenovou představu</li>
         </ul>
+      </div>
 
-        <p>
-          Nabídky bez těchto informací nejsou vyřizovány.
-        </p>
+      <div class="contact">
+        <p>Nabídky zasílejte na e-mail:</p>
+        <a href="mailto:vojensky-vykup@email.cz">
+          vojensky-vykup@email.cz
+        </a>
       </div>
 
     </div>
 
   </div>
 
-  <div class="contact">
-    <p>Nabídky zasílejte na e-mail:</p>
-    <strong>vojensky-vykup@email.cz</strong>
-  </div>
-
 </div>
 
 <footer>
-  © Vojenský výkup
+  © 2018–2026 Vojenský výkup ®  
+  <br>
+  Veškeré fotografie jsou chráněny ochrannou známkou a nesmí být kopírovány.
 </footer>
 
 <!-- ===== OCHRANA PROTI KOPÍROVÁNÍ ===== -->
 <script>
-// Pravé tlačítko
 document.addEventListener('contextmenu', e => e.preventDefault());
 
-// Klávesové zkratky
 document.addEventListener('keydown', function(e) {
   if (
     (e.ctrlKey && ['c','v','s','p','u','a'].includes(e.key.toLowerCase())) ||
@@ -204,13 +216,6 @@ document.addEventListener('keydown', function(e) {
     alert('Kopírování obsahu je zakázáno.');
   }
 });
-
-// Pokus o PrintScreen (překrytí)
-setInterval(() => {
-  if (window.outerWidth - window.innerWidth > 200) {
-    document.body.innerHTML = '';
-  }
-}, 1000);
 </script>
 
 </body>
