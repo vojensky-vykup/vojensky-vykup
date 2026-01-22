@@ -5,6 +5,11 @@
 <title>Výkup vojenského, hasičského a policejního materiálu</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<!-- 🔒 VYNUCENÍ HTTPS + OCHRANA -->
+<base href="https://vojensky-vykup.cz/">
+<meta http-equiv="Content-Security-Policy"
+content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
+
 <style>
 /* ===== ZÁKLAD ===== */
 body {
@@ -16,7 +21,7 @@ body {
   user-select: none;
 }
 
-/* ===== HERO – PŮVODNÍ ROZMĚRY ===== */
+/* ===== HERO ===== */
 .hero {
   position: relative;
   width: 100%;
@@ -28,22 +33,22 @@ body {
   display: block;
 }
 
-/* text na fotce */
 .hero-text {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-
-  font-family: "Georgia", "Times New Roman", serif;
+  font-family: Georgia, "Times New Roman", serif;
   font-size: 2.6em;
   letter-spacing: 2px;
-  color: #fff;
-
   padding: 18px 42px;
   background: rgba(0,0,0,0.35);
   border: 1px solid rgba(255,255,255,0.4);
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+}
+
+.hero-text a {
+  color: #fff;
+  text-decoration: none;
 }
 
 /* ===== OBSAH ===== */
@@ -53,17 +58,12 @@ body {
   padding: 0 20px;
 }
 
-h1 {
-  font-size: 2.2em;
-  margin-bottom: 10px;
-}
-
 .intro {
   max-width: 900px;
   margin-bottom: 40px;
 }
 
-/* ===== GRID FOTEK ===== */
+/* ===== GRID ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -75,25 +75,9 @@ h1 {
   width: 100%;
   height: 200px;
   object-fit: cover;
-  display: block;
 }
 
-/* ===== TEXT POD FOTKAMI ===== */
-.offer {
-  max-width: 800px;
-  margin: 0 auto 40px;
-}
-
-.offer h2 {
-  font-size: 1.6em;
-  margin-bottom: 15px;
-}
-
-.offer ul {
-  margin-bottom: 20px;
-}
-
-/* ===== EMAIL ===== */
+/* ===== KONTAKT ===== */
 .contact {
   text-align: center;
   background: #2b2b2b;
@@ -116,15 +100,10 @@ footer {
   margin: 30px 0;
 }
 
-/* ===== RESPONSIVE ===== */
 @media (max-width: 700px) {
   .hero-text {
     font-size: 1.6em;
     padding: 12px 20px;
-  }
-
-  .grid img {
-    height: 170px;
   }
 }
 </style>
@@ -132,22 +111,20 @@ footer {
 
 <body>
 
-<!-- HERO -->
 <div class="hero">
   <img src="images/uvodnifotka3.png" alt="Vojenský výkup">
-  <div class="hero-text">www.vojensky-vykup.cz</div>
+  <div class="hero-text">
+    <a href="https://vojensky-vykup.cz">www.vojensky-vykup.cz</a>
+  </div>
 </div>
 
 <div class="container">
-
-  <h1>Výkup vojenského, hasičského a policejního materiálu</h1>
 
   <p class="intro">
     Dlouhodobě se zabýváme výkupem vojenských, hasičských a policejních sběratelských předmětů všech období.
     Jednáme seriózně, diskrétně a férově.
   </p>
 
-  <!-- GRID OBRÁZKŮ -->
   <div class="grid">
     <img src="images/burinky.png">
     <img src="images/rakousko.png">
@@ -159,43 +136,23 @@ footer {
     <img src="images/damskecepice.png">
   </div>
 
-  <!-- TEXT -->
-  <div class="offer">
-    <h2>Jak nabídku zaslat</h2>
-    <ul>
-      <li>stručný popis předmětu</li>
-      <li>fotografie</li>
-      <li>cenovou představu</li>
-    </ul>
-  </div>
-
 </div>
 
-<!-- EMAIL -->
 <div class="contact">
   <p>Nabídky zasílejte na e-mail:</p>
-  <a href="mailto:vojensky-vykup@email.cz">
-    vojensky-vykup@email.cz
-  </a>
+  <a href="mailto:vojensky-vykup@email.cz">vojensky-vykup@email.cz</a>
 </div>
 
 <footer>
-  © 2018–2026 Vojenský výkup ®  
-  <br>
+  © 2018–2026 Vojenský výkup ®<br>
   Veškeré fotografie jsou chráněny ochrannou známkou a nesmí být kopírovány.
 </footer>
 
-<!-- ===== OCHRANA PROTI KOPÍROVÁNÍ ===== -->
 <script>
 document.addEventListener('contextmenu', e => e.preventDefault());
-
-document.addEventListener('keydown', function(e) {
-  if (
-    (e.ctrlKey && ['c','v','s','p','u','a'].includes(e.key.toLowerCase())) ||
-    e.key === 'PrintScreen'
-  ) {
+document.addEventListener('keydown', e => {
+  if ((e.ctrlKey && ['c','v','s','p','u','a'].includes(e.key.toLowerCase())) || e.key === 'PrintScreen') {
     e.preventDefault();
-    alert('Kopírování obsahu je zakázáno.');
   }
 });
 </script>
