@@ -5,11 +5,6 @@
 <title>Výkup vojenského, hasičského a policejního materiálu</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- 🔒 VYNUCENÍ HTTPS + OCHRANA -->
-<base href="https://vojensky-vykup.cz/">
-<meta http-equiv="Content-Security-Policy"
-content="default-src 'self'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline';">
-
 <style>
 /* ===== ZÁKLAD ===== */
 body {
@@ -41,9 +36,11 @@ body {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 2.6em;
   letter-spacing: 2px;
+  color: #fff;
   padding: 18px 42px;
   background: rgba(0,0,0,0.35);
   border: 1px solid rgba(255,255,255,0.4);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
 .hero-text a {
@@ -58,12 +55,17 @@ body {
   padding: 0 20px;
 }
 
+h1 {
+  font-size: 2.2em;
+  margin-bottom: 10px;
+}
+
 .intro {
   max-width: 900px;
   margin-bottom: 40px;
 }
 
-/* ===== GRID ===== */
+/* ===== GRID FOTEK ===== */
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -75,6 +77,7 @@ body {
   width: 100%;
   height: 200px;
   object-fit: cover;
+  display: block;
 }
 
 /* ===== KONTAKT ===== */
@@ -100,10 +103,15 @@ footer {
   margin: 30px 0;
 }
 
+/* ===== RESPONSIVE ===== */
 @media (max-width: 700px) {
   .hero-text {
     font-size: 1.6em;
     padding: 12px 20px;
+  }
+
+  .grid img {
+    height: 170px;
   }
 }
 </style>
@@ -111,6 +119,7 @@ footer {
 
 <body>
 
+<!-- HERO -->
 <div class="hero">
   <img src="images/uvodnifotka3.png" alt="Vojenský výkup">
   <div class="hero-text">
@@ -120,27 +129,33 @@ footer {
 
 <div class="container">
 
+  <h1>Výkup vojenského, hasičského a policejního materiálu</h1>
+
   <p class="intro">
     Dlouhodobě se zabýváme výkupem vojenských, hasičských a policejních sběratelských předmětů všech období.
     Jednáme seriózně, diskrétně a férově.
   </p>
 
+  <!-- GRID OBRÁZKŮ -->
   <div class="grid">
-    <img src="images/burinky.png">
-    <img src="images/rakousko.png">
-    <img src="images/uniformy.png">
-    <img src="images/dokumenty.png">
-    <img src="images/medailerakousko.png">
-    <img src="images/vzornaci.png">
-    <img src="images/cepice.png">
-    <img src="images/damskecepice.png">
+    <img src="images/burinky.png" alt="">
+    <img src="images/rakousko.png" alt="">
+    <img src="images/uniformy.png" alt="">
+    <img src="images/dokumenty.png" alt="">
+    <img src="images/medailerakousko.png" alt="">
+    <img src="images/vzornaci.png" alt="">
+    <img src="images/cepice.png" alt="">
+    <img src="images/damskecepice.png" alt="">
   </div>
 
 </div>
 
+<!-- EMAIL -->
 <div class="contact">
   <p>Nabídky zasílejte na e-mail:</p>
-  <a href="mailto:vojensky-vykup@email.cz">vojensky-vykup@email.cz</a>
+  <a href="mailto:vojensky-vykup@email.cz">
+    vojensky-vykup@email.cz
+  </a>
 </div>
 
 <footer>
@@ -148,10 +163,15 @@ footer {
   Veškeré fotografie jsou chráněny ochrannou známkou a nesmí být kopírovány.
 </footer>
 
+<!-- OCHRANA PROTI KOPÍROVÁNÍ -->
 <script>
 document.addEventListener('contextmenu', e => e.preventDefault());
-document.addEventListener('keydown', e => {
-  if ((e.ctrlKey && ['c','v','s','p','u','a'].includes(e.key.toLowerCase())) || e.key === 'PrintScreen') {
+
+document.addEventListener('keydown', function(e) {
+  if (
+    (e.ctrlKey && ['c','v','s','p','u','a'].includes(e.key.toLowerCase())) ||
+    e.key === 'PrintScreen'
+  ) {
     e.preventDefault();
   }
 });
