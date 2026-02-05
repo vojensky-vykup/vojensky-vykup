@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://vojensky-vykup.cz/sitemap.xml
+Sitemap: https://www.vojenskyvykup.cz/sitemap.xml
