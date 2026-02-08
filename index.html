@@ -134,7 +134,7 @@ h2 {
   display: block;
 }
 
-/* ===== KONTAKT – ZVÝRAZNĚNO ===== */
+/* ===== KONTAKT ===== */
 .contact {
   text-align: center;
   background: #2b2b2b;
@@ -154,20 +154,26 @@ h2 {
   text-decoration: none;
 }
 
+/* ===== FACEBOOK POD KONTAKTEM ===== */
+.fb-contact {
+  text-align: center;
+  margin: 15px 0 30px;
+  font-size: 0.95em;
+}
+
+.fb-contact a {
+  color: #333;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
 footer {
   text-align: center;
   font-size: 0.85em;
   color: #777;
   margin: 30px 0;
-}
-
-footer a {
-  color: #555;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 6px;
 }
 </style>
 </head>
@@ -271,14 +277,17 @@ Každou nabídku posuzujeme individuálně a ozveme se v co nejkratším možné
 <a href="mailto:vojenskyvykup@email.cz">vojenskyvykup@email.cz</a>
 </div>
 
-<footer>
-© 2018–2026 Vojenský výkup ®<br>
+<div class="fb-contact">
 <a href="https://www.facebook.com/profile.php?id=61587243736339" target="_blank" rel="noopener noreferrer">
-<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="#555">
+<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="#333">
 <path d="M22.675 0h-21.35C.597 0 0 .597 0 1.326v21.348C0 23.403.597 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.894-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.31h3.587l-.467 3.622h-3.12V24h6.116C23.403 24 24 23.403 24 22.674V1.326C24 .597 23.403 0 22.675 0z"/>
 </svg>
-Facebook
-</a><br>
+Můžete nás kontaktovat i přes Facebook
+</a>
+</div>
+
+<footer>
+© 2018–2026 Vojenský výkup ®<br>
 Veškeré fotografie jsou chráněny ochrannou známkou a nesmí být kopírovány.
 </footer>
 
